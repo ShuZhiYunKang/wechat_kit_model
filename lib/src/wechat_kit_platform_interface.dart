@@ -1,32 +1,32 @@
 import 'dart:typed_data';
 
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
-import 'package:wechat_kit/src/constant.dart';
-import 'package:wechat_kit/src/model/qrauth.dart';
-import 'package:wechat_kit/src/model/req.dart';
-import 'package:wechat_kit/src/model/resp.dart';
-import 'package:wechat_kit/src/wechat_kit_method_channel.dart';
+import 'package:wechat_kit_model/src/constant.dart';
+import 'package:wechat_kit_model/src/model/qrauth.dart';
+import 'package:wechat_kit_model/src/model/req.dart';
+import 'package:wechat_kit_model/src/model/resp.dart';
+// import 'package:wechat_kit_model/src/wechat_kit_method_channel.dart';
 
-abstract class WechatKitPlatform extends PlatformInterface {
+abstract class WechatKitPlatform {
   /// Constructs a WechatKitPlatform.
-  WechatKitPlatform() : super(token: _token);
+  // WechatKitPlatform() : super(token: _token);
 
-  static final Object _token = Object();
+  // static final Object _token = Object();
 
-  static WechatKitPlatform _instance = MethodChannelWechatKit();
+  // static WechatKitPlatform _instance = MethodChannelWechatKit();
 
   /// The default instance of [WechatKitPlatform] to use.
   ///
   /// Defaults to [MethodChannelWechatKit].
-  static WechatKitPlatform get instance => _instance;
+  // static WechatKitPlatform get instance => _instance;
 
   /// Platform-specific implementations should set this with their own
   /// platform-specific class that extends [WechatKitPlatform] when
   /// they register themselves.
-  static set instance(WechatKitPlatform instance) {
-    PlatformInterface.verifyToken(instance, _token);
-    _instance = instance;
-  }
+  // static set instance(WechatKitPlatform instance) {
+  //   PlatformInterface.verifyToken(instance, _token);
+  //   _instance = instance;
+  // }
 
   /// 向微信注册应用
   Future<void> registerApp({
